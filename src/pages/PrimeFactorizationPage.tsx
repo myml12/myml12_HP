@@ -5,7 +5,7 @@ import primeIcon from '../assets/瞬間素因数分解.png'
 
 function PrimeFactorizationPage(): React.JSX.Element {
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
   }, [])
 
   return (
