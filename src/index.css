@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus,
+*:focus-visible,
+*:focus-within,
+*:active {
+  outline: 0;
+  outline: none;
+  outline-width: 0;
+  outline-style: none;
+  outline-color: transparent;
+}
+
+a:focus,
+a:focus-visible,
+a:active,
+button:focus,
+button:focus-visible,
+button:active,
+input:focus,
+input:focus-visible,
+input:active,
+select:focus,
+select:focus-visible,
+select:active,
+textarea:focus,
+textarea:focus-visible,
+textarea:active,
+[tabindex]:focus,
+[tabindex]:focus-visible,
+[tabindex]:active,
+div:focus,
+div:focus-visible,
+div:active {
+  outline: 0;
+  outline: none;
+  outline-width: 0;
+  outline-style: none;
+  outline-color: transparent;
+  box-shadow: none;
+}
+
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-tertiary: #808080;
+  --accent-primary: #00d4ff;
+  --accent-secondary: #0099cc;
+  --accent-glow: rgba(0, 212, 255, 0.3);
+  --border-color: #2a2a2a;
+  --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', 'MS PGothic', 'Noto Sans JP', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
