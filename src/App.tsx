@@ -73,7 +73,7 @@ function HomePage(): React.JSX.Element {
             </div>
             <p className="hero-subtitle">iOS & Web Developer</p>
             <p className="hero-description">
-              ユーザーの課題解決とビジネス価値創出を両立するアプリ開発。技術力とマネタイズ戦略を兼ね備えた開発者として、持続可能なサービス運営を実践しています。
+              日常生活をより便利に、そして面白くすることを目指し、様々な分野でアプリ開発を行っています。学生生活からエンターテイメントまで、幅広い領域で活動しています。
             </p>
             <div className="hero-buttons">
               <a href="#featured" className="btn btn-primary">主要プロジェクト</a>
@@ -89,7 +89,7 @@ function HomePage(): React.JSX.Element {
               <h2 className="section-title">Featured Projects</h2>
               <p className="section-subtitle">
                 日常的な課題に寄り添い、技術で解決する。<br />
-                学生生活からエンターテイメントまで、幅広い分野で価値を提供しています。
+                便利さと面白さを両立させながら、学生生活からエンターテイメントまで、様々な分野で活動・開発を行っています。
               </p>
             </div>
 
