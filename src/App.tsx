@@ -18,7 +18,28 @@ import toyoinfoIcon from './assets/toyoinfo.png'
 import mirurunIcon from './assets/mirurun.png'
 import hitAndBlowIcon from './assets/hit_and_blow_analyze.png'
 
+const HOME_SCROLL_Y_KEY = 'homeScrollY'
+const SHOULD_RESTORE_HOME_SCROLL_KEY = 'shouldRestoreHomeScroll'
+
 function HomePage(): React.JSX.Element {
+  const saveHomeScrollPosition = (): void => {
+    sessionStorage.setItem(HOME_SCROLL_Y_KEY, String(window.scrollY))
+    sessionStorage.setItem(SHOULD_RESTORE_HOME_SCROLL_KEY, '1')
+  }
+
+  useEffect(() => {
+    const shouldRestore = sessionStorage.getItem(SHOULD_RESTORE_HOME_SCROLL_KEY) === '1'
+    const savedY = sessionStorage.getItem(HOME_SCROLL_Y_KEY)
+
+    if (shouldRestore && savedY !== null) {
+      const y = Number(savedY)
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: Number.isFinite(y) ? y : 0, left: 0, behavior: 'auto' })
+      })
+      sessionStorage.removeItem(SHOULD_RESTORE_HOME_SCROLL_KEY)
+    }
+  }, [])
+
   useEffect(() => {
     const anchors = document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')
     anchors.forEach((anchor) => {
@@ -41,6 +62,19 @@ function HomePage(): React.JSX.Element {
   return (
     <>
       <div className="app">
+        <header className="site-header">
+          <div className="site-header__inner">
+            <a href="#" className="site-header__brand">Yusuke Mizuno</a>
+            <nav className="site-header__nav" aria-label="セクションナビゲーション">
+              <a href="#projects" className="site-header__link">Projects</a>
+              <a href="#achievements" className="site-header__link">Metrics</a>
+              <a href="#awards" className="site-header__link">Awards</a>
+              <a href="#about" className="site-header__link">About</a>
+              <a href="#contact" className="site-header__link">Contact</a>
+            </nav>
+          </div>
+        </header>
+
         {/* Hero Section */}
         <section className="hero">
           <div className="hero-content">
@@ -75,22 +109,50 @@ function HomePage(): React.JSX.Element {
             <p className="hero-description">
               日常生活をより便利に、そして面白くすることを目指し、様々な分野でアプリ開発を行っています。学生生活からエンターテイメントまで、幅広い領域で活動しています。
             </p>
+            <div className="github-stats-grid hero-github-stats">
+              <a
+                href="https://github.com/myml12"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-stat-card"
+              >
+                <h3>Contributions</h3>
+                <img
+                  src="https://ghchart.rshah.org/004466/myml12"
+                  alt="GitHub Contribution Calendar"
+                  loading="lazy"
+                />
+              </a>
+
+              <a
+                href="https://github.com/myml12"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-stat-card github-lang-card"
+              >
+                <h3>Most Used Languages</h3>
+                <div className="github-lang-image-crop">
+                  <img
+                    src="https://github-readme-stats.vercel.app/api/top-langs/?username=myml12&layout=compact&hide_border=true"
+                    className="github-lang-image-trimmed"
+                    alt="Most Used Languages"
+                    loading="lazy"
+                  />
+                </div>
+              </a>
+            </div>
             <div className="hero-buttons">
-              <a href="#featured" className="btn btn-primary">主要プロジェクト</a>
+              <a href="#projects" className="btn btn-primary">主要プロジェクト</a>
               <a href="#about" className="btn btn-outline">詳細情報</a>
             </div>
           </div>
         </section>
 
-        {/* Featured Apps Section */}
-        <section id="featured" className="section">
+        {/* Projects Section */}
+        <section id="projects" className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Featured Projects</h2>
-              <p className="section-subtitle">
-                日常的な課題に寄り添い、技術で解決する。<br />
-                便利さと面白さを両立させながら、学生生活からエンターテイメントまで、様々な分野で活動・開発を行っています。
-              </p>
+              <h2 className="section-title">Projects</h2>
             </div>
 
             <div className="featured-grid">
@@ -106,11 +168,11 @@ function HomePage(): React.JSX.Element {
                   </div>
                   <div className="featured-stats">
                     <div className="stat-item">
-                      <div className="stat-value">4.8K</div>
+                      <div className="stat-value">5000+</div>
                       <div className="stat-label">DL</div>
                     </div>
                     <div className="stat-item">
-                      <div className="stat-value">2K</div>
+                      <div className="stat-value">2000+</div>
                       <div className="stat-label">MAU</div>
                     </div>
                   </div>
@@ -145,7 +207,7 @@ function HomePage(): React.JSX.Element {
                 </div>
 
                 <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem' }}>
-                  <Link to="/rhythmap" className="btn btn-primary" style={{ flex: 1 }}>詳細を見る</Link>
+                  <Link to="/rhythmap" className="btn btn-primary" style={{ flex: 1 }} onClick={saveHomeScrollPosition}>詳細を見る</Link>
                   <a href="https://apps.apple.com/jp/app/%E3%83%AA%E3%82%BA%E3%83%9E%E3%83%83%E3%83%97-%E9%9F%B3%E3%82%B2%E3%83%BC%E6%83%85%E5%A0%B1%E3%82%A2%E3%83%97%E3%83%AA/id6502974735" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1 }}>App Store</a>
                 </div>
               </div>
@@ -162,7 +224,7 @@ function HomePage(): React.JSX.Element {
                   </div>
                   <div className="featured-stats">
                     <div className="stat-item">
-                      <div className="stat-value">900</div>
+                      <div className="stat-value">1000+</div>
                       <div className="stat-label">DL</div>
                     </div>
                     <div className="stat-item">
@@ -204,23 +266,13 @@ function HomePage(): React.JSX.Element {
                 </div>
 
                 <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem' }}>
-                  <Link to="/chuinfo" className="btn btn-primary" style={{ flex: 1 }}>詳細を見る</Link>
+                  <Link to="/chuinfo" className="btn btn-primary" style={{ flex: 1 }} onClick={saveHomeScrollPosition}>詳細を見る</Link>
                   <a href="https://apps.apple.com/jp/app/chuinfo-%E4%B8%AD%E5%A4%AE%E5%A4%A7%E7%94%9F%E5%90%91%E3%81%91%E9%9D%9E%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA/id6670358906" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1 }}>App Store</a>
                 </div>
               </div>
 
             </div>
-          </div>
-        </section>
-
-        {/* Other Projects Section */}
-        <section className="section section-alt">
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">Other Projects</h2>
-            </div>
-
-            <div className="other-projects-grid">
+            <div className="other-projects-grid projects-followup-grid">
               <div className="other-project-card">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                   <img src={primeIcon} alt="瞬間素因数分解" style={{ width: '50px', height: '50px', borderRadius: '10px' }} />
@@ -233,7 +285,7 @@ function HomePage(): React.JSX.Element {
                   <span>アルゴリズム</span>
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
-                  <Link to="/prime-factorization" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }}>詳細を見る</Link>
+                  <Link to="/prime-factorization" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }} onClick={saveHomeScrollPosition}>詳細を見る</Link>
                   <a href="https://apps.apple.com/jp/app/%E7%9E%AC%E9%96%93%E7%B4%A0%E5%9B%A0%E6%95%B0%E5%88%86%E8%A7%A3-prime-factorization/id6478605149" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }}>App Store</a>
                 </div>
               </div>
@@ -251,7 +303,7 @@ function HomePage(): React.JSX.Element {
                   <span>GoogleMobileAds</span>
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
-                  <Link to="/hit-and-blow" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }}>詳細を見る</Link>
+                  <Link to="/hit-and-blow" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }} onClick={saveHomeScrollPosition}>詳細を見る</Link>
                   <a href="https://apps.apple.com/jp/app/hit-and-blow-analyze-%E8%A7%A3%E6%9E%90/id6477672076" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }}>App Store</a>
                 </div>
               </div>
@@ -269,7 +321,7 @@ function HomePage(): React.JSX.Element {
                   <span>Web Scraping</span>
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
-                  <Link to="/toyoinfo" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }}>詳細を見る</Link>
+                  <Link to="/toyoinfo" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }} onClick={saveHomeScrollPosition}>詳細を見る</Link>
                   <a href="https://apps.apple.com/jp/app/toyoinfo/id6739492265" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }}>App Store</a>
                 </div>
               </div>
@@ -287,7 +339,7 @@ function HomePage(): React.JSX.Element {
                   <span>WebKit</span>
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
-                  <Link to="/mirurun" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }}>詳細を見る</Link>
+                  <Link to="/mirurun" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }} onClick={saveHomeScrollPosition}>詳細を見る</Link>
                   <a href="https://apps.apple.com/jp/app/mirurun-%E3%81%BF%E3%82%8B%E3%82%8B%E3%82%93/id6751216709" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }}>App Store</a>
                 </div>
               </div>
@@ -305,7 +357,7 @@ function HomePage(): React.JSX.Element {
                   <span>UserDefaults</span>
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
-                  <Link to="/checknextclass" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }}>詳細を見る</Link>
+                  <Link to="/checknextclass" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }} onClick={saveHomeScrollPosition}>詳細を見る</Link>
                   <a href="https://apps.apple.com/jp/app/%E3%83%84%E3%82%AE%E3%83%89%E3%82%B3-%E6%95%99%E5%AE%A4%E3%82%92%E7%9E%AC%E6%99%82%E3%81%AB%E7%A2%BA%E8%AA%8D/id6499110752" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }}>App Store</a>
                 </div>
               </div>
@@ -458,6 +510,55 @@ function HomePage(): React.JSX.Element {
           </div>
         </section>
 
+        {/* Awards Section */}
+        <section id="awards" className="section section-alt">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">受賞歴</h2>
+            </div>
+
+            <div className="award-cards">
+              <article className="award-card award-card--horizontal">
+                <div className="award-card__content">
+                  <p className="award-card__contest">公共交通オープンデータチャレンジ2025</p>
+                  <h3 className="award-card__title award-card__title--highlight">JR東日本賞</h3>
+                  <p className="award-card__team">EkiLink（中央大学情報工学研究部）</p>
+                  <p className="award-card__text">
+                    駅構内を3Dで可視化し、誰もが迷わず安心して移動できるバリアフリー・ナビを目指した取り組みです。
+                    国土交通省のデータ仕様に基づき、MapLibre GL JS等を用いて複雑な階層構造を再現し、階段を回避した経路検索を提供します。
+                  </p>
+                  <div className="award-card__tags">
+                    <span>3D駅構内可視化</span>
+                    <span>バリアフリーナビ</span>
+                    <span>階段回避ルート検索</span>
+                    <span>MapLibre GL JS</span>
+                    <span>都営大江戸線対応</span>
+                  </div>
+                  <p className="award-card__note">
+                    最終審査会・表彰式（2026年2月21日）にて、約600人エントリー / 13作品ファイナリストの中から受賞。
+                  </p>
+                  <div className="award-card__actions">
+                    <a href="https://ekilink.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Webアプリ</a>
+                    <a href="https://challenge2025.odpt.org/" target="_blank" rel="noopener noreferrer" className="btn btn-outline">コンテスト公式サイト</a>
+                    <a href="https://prtimes.jp/main/html/rd/p/000000017.000146050.html" target="_blank" rel="noopener noreferrer" className="btn btn-outline">プレスリリース</a>
+                  </div>
+                </div>
+                <div className="award-card__media">
+                  <iframe
+                    className="award-video"
+                    src="https://www.youtube.com/embed/JARN40xrwzY"
+                    title="公共交通オープンデータチャレンジ2025「EkiLink」紹介動画"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
         {/* About Section */}
         <section id="about" className="section section-alt">
           <div className="container">
@@ -476,10 +577,17 @@ function HomePage(): React.JSX.Element {
               </div>
               <div className="about-column">
                 <h3>技術スタック</h3>
-                <p><strong>iOS開発：</strong>Swift/SwiftUIによるネイティブアプリ開発。MapKitによる地図表示、WidgetKitによるホーム画面・ロック画面ウィジェット実装、WebKitによる埋め込みブラウザ、SwiftSoupによるWebスクレイピング、CoreNFCによるNFC通信、AVKitによる動画再生、StoreKitによるサブスクリプション課金システムなど、iOSの各種フレームワークを活用した実装経験があります。</p>
-                <p style={{ marginTop: '1rem' }}><strong>バックエンド・データベース：</strong>Firebase（Firestore、Firebase Analytics、Firebase Realtime Database）を活用したサーバーレスアーキテクチャ。FirestoreによるNoSQLデータベース設計、Firebase Realtime Databaseによるリアルタイム同期など、スケーラブルなバックエンド構築を実現しています。</p>
-                <p style={{ marginTop: '1rem' }}><strong>Web開発：</strong>React、Vite、Next.js、TypeScriptによるモダンなフロントエンド開発。HTML5/CSS3/JavaScriptによる従来型Web開発、外部APIとの連携によるデータ取得、CSVデータ処理による地域検索機能の実装など、多様なWeb技術を活用しています。</p>
-                <p style={{ marginTop: '1rem' }}><strong>ハードウェア開発：</strong>Arduino、ESP32/ESP32S3による組み込みシステム開発。ステッピングモーター制御、加速度センサーによる状態検知、Firebase Realtime Databaseとの無線通信、OpenCVを活用した画像認識など、物理デバイスとクラウドサービスを連携させたIoTシステムの構築経験があります。</p>
+                <p><strong>iOS開発</strong><br />Swift / SwiftUI を用いたネイティブアプリ開発を中心に行っています。</p>
+                <p style={{ marginTop: '1rem' }}>MapKitによる地図表示、WidgetKitによるホーム画面・ロック画面ウィジェット、WebKitを使った埋め込みブラウザなど、iOS標準フレームワークを活用した実装が可能です。</p>
+                <p style={{ marginTop: '1rem' }}>また、SwiftSoupによるWebスクレイピング、CoreNFCによるNFC通信、AVKitでの動画再生、StoreKitによるサブスクリプション課金など、アプリの機能に応じて幅広い機能開発を経験しています。</p>
+                <p style={{ marginTop: '1rem' }}><strong>■ バックエンド / データベース</strong><br />Firebaseを中心としたサーバーレス構成でバックエンドを構築しています。</p>
+                <p style={{ marginTop: '1rem' }}>FirestoreでのNoSQLデータ設計や、Realtime Databaseによるリアルタイム同期に加え、Firebase Authenticationを用いたユーザー認証機能（ログイン / サインアップ）の実装経験があります。</p>
+                <p style={{ marginTop: '1rem' }}>また、Firebase Analyticsを使ったユーザー行動の分析にも対応できます。</p>
+                <p style={{ marginTop: '1rem' }}><strong>■ Web開発</strong><br />React、Next.js、Vite、TypeScriptを用いたフロントエンド開発に対応しています。</p>
+                <p style={{ marginTop: '1rem' }}>加えて、HTML / CSS / JavaScriptによる基本的なWeb開発や、外部API連携によるデータ取得、CSVデータを使った検索機能の実装など、用途に応じた柔軟な開発が可能です。</p>
+                <p style={{ marginTop: '1rem' }}><strong>■ ハードウェア / IoT開発</strong><br />ArduinoやESP32（ESP32S3含む）を用いた組み込み開発の経験があります。</p>
+                <p style={{ marginTop: '1rem' }}>ステッピングモーター制御や加速度センサーによる状態検知、Firebase Realtime Databaseとの連携による通信処理など、クラウドと連動したシステムを構築できます。</p>
+                <p style={{ marginTop: '1rem' }}>また、OpenCVを使った簡単な画像認識にも対応しています。</p>
               </div>
             </div>
 
@@ -516,7 +624,7 @@ function HomePage(): React.JSX.Element {
         </section>
 
         {/* Contact Section */}
-        <section className="contact-section">
+        <section id="contact" className="contact-section">
           <div className="container">
             <div className="contact-card">
               <h2>Contact</h2>
