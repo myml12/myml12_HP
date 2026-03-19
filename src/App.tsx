@@ -163,7 +163,7 @@ function HomePage(): React.JSX.Element {
                     <img src={rhythmapIcon} alt="RhythMap" style={{ width: '60px', height: '60px', borderRadius: '12px' }} />
                     <div>
                       <h3>RhythMap</h3>
-                      <p className="featured-category">音ゲー店舗検索アプリ</p>
+                      <p className="featured-category">AC音楽ゲーム情報アプリ</p>
                     </div>
                   </div>
                   <div className="featured-stats">
@@ -179,7 +179,7 @@ function HomePage(): React.JSX.Element {
                 </div>
 
                 <p className="featured-description">
-                  全国のゲームセンターにおけるAC音楽ゲーム情報を提供するアプリ。2024年5月にiOS版、6月にWeb版をリリースし、現在まで継続的な運営・メンテナンスを実施。現在地検索、店名検索、機種別台数絞り込み、便利情報の全文検索を実現。サービス開始前は台数情報がローカルな情報に限られていた課題を解決し、誰でも気軽に筐体配置や台数情報にアクセスできる環境を構築。AppStoreカテゴリ別ランキング（ナビゲーション）で最高4位を獲得。X（旧Twitter）を活用した情報提供募集により2000人以上から情報提供を受け、国内のみならず海外からの情報提供も受け付けるなど、サービスの範囲を拡大しています。
+                  全国のゲームセンターにおけるAC音楽ゲームの店舗情報を提供するアプリ。2024年5月にiOS版、6月にWeb版をリリースし、現在まで継続的な運営・メンテナンスを実施。現在地検索、店名検索、機種別台数絞り込み、便利情報の全文検索を実現。サービス開始前は台数情報がローカルな情報に限られていた課題を解決し、誰でも気軽に筐体配置や台数情報にアクセスできる環境を構築。AppStoreカテゴリ別ランキング（ナビゲーション）で最高4位を獲得。X（旧Twitter）を活用した情報提供募集により数千人から情報提供を受け、国内のみならず海外からの情報提供も受け付けるなど、サービスの範囲を拡大しています。
                 </p>
 
                 <div className="featured-features">
@@ -522,20 +522,20 @@ function HomePage(): React.JSX.Element {
                 <div className="award-card__content">
                   <p className="award-card__contest">公共交通オープンデータチャレンジ2025</p>
                   <h3 className="award-card__title award-card__title--highlight">JR東日本賞</h3>
-                  <p className="award-card__team">EkiLink（中央大学情報工学研究部）</p>
+                  <p className="award-card__team">EkiLink -エキリンク-</p>
                   <p className="award-card__text">
                     駅構内を3Dで可視化し、誰もが迷わず安心して移動できるバリアフリー・ナビを目指した取り組みです。
                     国土交通省のデータ仕様に基づき、MapLibre GL JS等を用いて複雑な階層構造を再現し、階段を回避した経路検索を提供します。
                   </p>
                   <div className="award-card__tags">
+                    <span>歩行空間ネットワークデータ</span>
                     <span>3D駅構内可視化</span>
                     <span>バリアフリーナビ</span>
                     <span>階段回避ルート検索</span>
                     <span>MapLibre GL JS</span>
-                    <span>都営大江戸線対応</span>
                   </div>
                   <p className="award-card__note">
-                    最終審査会・表彰式（2026年2月21日）にて、約600人エントリー / 13作品ファイナリストの中から受賞。
+                    最終審査会・表彰式（2026年2月21日）にて、約600エントリー / 13作品ファイナリストの中から受賞。
                   </p>
                   <div className="award-card__actions">
                     <a href="https://ekilink.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Webアプリ</a>
@@ -548,7 +548,6 @@ function HomePage(): React.JSX.Element {
                     className="award-video"
                     src="https://www.youtube.com/embed/JARN40xrwzY"
                     title="公共交通オープンデータチャレンジ2025「EkiLink」紹介動画"
-                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
@@ -576,19 +575,50 @@ function HomePage(): React.JSX.Element {
                 <p>ユーザーの日常的な課題を解決し、生活をより便利で楽しいものにすることを目指しています。ソフトウェアとハードウェアの両面からアプローチすることで、単なるアプリ開発の枠を超えた、より包括的なソリューションを提供しています。学生生活やエンターテイメント分野でのソリューション提供に注力し、技術の力で社会に価値を提供しています。また、持続可能なビジネスモデルの構築を通じて、長期的にユーザーに価値を提供し続けることを重視しています。</p>
               </div>
               <div className="about-column">
-                <h3>技術スタック</h3>
-                <p><strong>iOS開発</strong><br />Swift / SwiftUI を用いたネイティブアプリ開発を中心に行っています。</p>
-                <p style={{ marginTop: '1rem' }}>MapKitによる地図表示、WidgetKitによるホーム画面・ロック画面ウィジェット、WebKitを使った埋め込みブラウザなど、iOS標準フレームワークを活用した実装が可能です。</p>
-                <p style={{ marginTop: '1rem' }}>また、SwiftSoupによるWebスクレイピング、CoreNFCによるNFC通信、AVKitでの動画再生、StoreKitによるサブスクリプション課金など、アプリの機能に応じて幅広い機能開発を経験しています。</p>
-                <p style={{ marginTop: '1rem' }}><strong>■ バックエンド / データベース</strong><br />Firebaseを中心としたサーバーレス構成でバックエンドを構築しています。</p>
-                <p style={{ marginTop: '1rem' }}>FirestoreでのNoSQLデータ設計や、Realtime Databaseによるリアルタイム同期に加え、Firebase Authenticationを用いたユーザー認証機能（ログイン / サインアップ）の実装経験があります。</p>
-                <p style={{ marginTop: '1rem' }}>また、Firebase Analyticsを使ったユーザー行動の分析にも対応できます。</p>
-                <p style={{ marginTop: '1rem' }}><strong>■ Web開発</strong><br />React、Next.js、Vite、TypeScriptを用いたフロントエンド開発に対応しています。</p>
-                <p style={{ marginTop: '1rem' }}>加えて、HTML / CSS / JavaScriptによる基本的なWeb開発や、外部API連携によるデータ取得、CSVデータを使った検索機能の実装など、用途に応じた柔軟な開発が可能です。</p>
-                <p style={{ marginTop: '1rem' }}><strong>■ ハードウェア / IoT開発</strong><br />ArduinoやESP32（ESP32S3含む）を用いた組み込み開発の経験があります。</p>
-                <p style={{ marginTop: '1rem' }}>ステッピングモーター制御や加速度センサーによる状態検知、Firebase Realtime Databaseとの連携による通信処理など、クラウドと連動したシステムを構築できます。</p>
-                <p style={{ marginTop: '1rem' }}>また、OpenCVを使った簡単な画像認識にも対応しています。</p>
-              </div>
+  <h3>技術スタック</h3>
+
+  <p>
+    <strong>■ iOS開発</strong><br />
+    Swift / SwiftUI を用いたネイティブアプリ開発を中心に行っています。
+  </p>
+
+  <p style={{ marginTop: '1rem' }}>
+    MapKit、WidgetKit、WebKitなどのiOS標準フレームワークを活用した実装に加え、
+    SwiftSoupによるスクレイピング、CoreNFCによるNFC通信、AVKitでの動画再生、
+    StoreKitによるサブスクリプション課金など、幅広い機能開発に対応可能です。
+  </p>
+
+  <p style={{ marginTop: '1rem' }}>
+    <strong>■ バックエンド / データベース</strong><br />
+    Firebaseを中心としたサーバーレス構成でバックエンドを構築しています。
+  </p>
+
+  <p style={{ marginTop: '1rem' }}>
+    Firestore / Realtime Databaseによるデータ管理や、
+    Firebase Authenticationを用いたユーザー認証機能の実装経験があります。
+  </p>
+
+  <p style={{ marginTop: '1rem' }}>
+    <strong>■ Web開発</strong><br />
+    React、Next.js、Vite、TypeScript等を用いたフロントエンド開発が可能です。
+  </p>
+
+  <p style={{ marginTop: '1rem' }}>
+  HTML / CSS / JavaScriptによる基礎的な実装に加え、
+外部API連携や、データの加工・整形、検索・フィルタリング機能の実装など、
+用途に応じた柔軟な開発に対応しています。
+  </p>
+
+  <p style={{ marginTop: '1rem' }}>
+    <strong>■ ハードウェア / IoT開発</strong><br />
+    ArduinoやESP32を用いた組み込み開発の経験があります。
+  </p>
+
+  <p style={{ marginTop: '1rem' }}>
+    ステッピングモーター制御や加速度センサーによる状態検知、
+    Firebaseとの連携による通信処理など、クラウドと連動したIoTシステムの構築が可能です。
+  </p>
+</div>
             </div>
 
             {/* Business Section */}
