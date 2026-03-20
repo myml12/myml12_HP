@@ -514,7 +514,7 @@ function HomePage(): React.JSX.Element {
 
             <div className="metrics-grid">
               <div className="metric-card">
-                <div className="metric-value">8.1K</div>
+                <div className="metric-value">8.6K</div>
                 <div className="metric-label">総ダウンロード数</div>
                 <div className="metric-note">App Store</div>
               </div>
