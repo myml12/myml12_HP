@@ -410,7 +410,7 @@ function HomePage(): React.JSX.Element {
                       <span>ステッピングモーター制御</span>
                       <span>色認識（OpenCV）</span>
                       <span>無線制御</span>
-                      <span>自動解法</span>
+                      <span>解法解析</span>
                     </div>
                   </div>
                   <div className="feature-row">
@@ -524,8 +524,8 @@ function HomePage(): React.JSX.Element {
                   <h3 className="award-card__title award-card__title--highlight">JR東日本賞</h3>
                   <p className="award-card__team">EkiLink -エキリンク-</p>
                   <p className="award-card__text">
-                    駅構内を3Dで可視化し、誰もが迷わず安心して移動できるバリアフリー・ナビを目指した取り組みです。
-                    国土交通省のデータ仕様に基づき、MapLibre GL JS等を用いて複雑な階層構造を再現し、階段を回避した経路検索を提供します。
+                    駅構内を3Dで可視化し、誰もが迷わず安心して移動できるバリアフリー・ナビを目指した取り組み。
+                    国土交通省のデータ仕様に基づき、MapLibre等を用いて複雑な階層構造を再現し、階段うやエスカレーターを回避したバリアフリー経路検索を提供します。
                   </p>
                   <div className="award-card__tags">
                     <span>歩行空間ネットワークデータ</span>
@@ -575,50 +575,50 @@ function HomePage(): React.JSX.Element {
                 <p>ユーザーの日常的な課題を解決し、生活をより便利で楽しいものにすることを目指しています。ソフトウェアとハードウェアの両面からアプローチすることで、単なるアプリ開発の枠を超えた、より包括的なソリューションを提供しています。学生生活やエンターテイメント分野でのソリューション提供に注力し、技術の力で社会に価値を提供しています。また、持続可能なビジネスモデルの構築を通じて、長期的にユーザーに価値を提供し続けることを重視しています。</p>
               </div>
               <div className="about-column">
-  <h3>技術スタック</h3>
+                <h3>技術スタック</h3>
 
-  <p>
-    <strong>■ iOS開発</strong><br />
-    Swift / SwiftUI を用いたネイティブアプリ開発を中心に行っています。
-  </p>
+                <p>
+                  <strong>■ iOS開発</strong><br />
+                  Swift / SwiftUI を用いたネイティブアプリ開発を中心に行っています。
+                </p>
 
-  <p style={{ marginTop: '1rem' }}>
-    MapKit、WidgetKit、WebKitなどのiOS標準フレームワークを活用した実装に加え、
-    SwiftSoupによるスクレイピング、CoreNFCによるNFC通信、AVKitでの動画再生、
-    StoreKitによるサブスクリプション課金など、幅広い機能開発に対応可能です。
-  </p>
+                <p style={{ marginTop: '1rem' }}>
+                  MapKit、WidgetKit、WebKitなどのiOS標準フレームワークを活用した実装に加え、
+                  SwiftSoupによるスクレイピング、CoreNFCによるNFC通信、AVKitでの動画再生、
+                  StoreKitによるサブスクリプション課金など、幅広い機能開発に対応可能です。
+                </p>
 
-  <p style={{ marginTop: '1rem' }}>
-    <strong>■ バックエンド / データベース</strong><br />
-    Firebaseを中心としたサーバーレス構成でバックエンドを構築しています。
-  </p>
+                <p style={{ marginTop: '1rem' }}>
+                  <strong>■ バックエンド / データベース</strong><br />
+                  Firebaseを中心としたサーバーレス構成でバックエンドを構築しています。
+                </p>
 
-  <p style={{ marginTop: '1rem' }}>
-    Firestore / Realtime Databaseによるデータ管理や、
-    Firebase Authenticationを用いたユーザー認証機能の実装経験があります。
-  </p>
+                <p style={{ marginTop: '1rem' }}>
+                  Firestore / Realtime Databaseによるデータ管理や、
+                  Firebase Authenticationを用いたユーザー認証機能の実装経験があります。
+                </p>
 
-  <p style={{ marginTop: '1rem' }}>
-    <strong>■ Web開発</strong><br />
-    React、Next.js、Vite、TypeScript等を用いたフロントエンド開発が可能です。
-  </p>
+                <p style={{ marginTop: '1rem' }}>
+                  <strong>■ Web開発</strong><br />
+                  React、Next.js、Vite、TypeScript等を用いたフロントエンド開発が可能です。
+                </p>
 
-  <p style={{ marginTop: '1rem' }}>
-  HTML / CSS / JavaScriptによる基礎的な実装に加え、
-外部API連携や、データの加工・整形、検索・フィルタリング機能の実装など、
-用途に応じた柔軟な開発に対応しています。
-  </p>
+                <p style={{ marginTop: '1rem' }}>
+                  HTML / CSS / JavaScriptによる基礎的な実装に加え、
+                  外部API連携や、データの加工・整形、検索・フィルタリング機能の実装など、
+                  用途に応じた柔軟な開発に対応しています。
+                </p>
 
-  <p style={{ marginTop: '1rem' }}>
-    <strong>■ ハードウェア / IoT開発</strong><br />
-    ArduinoやESP32を用いた組み込み開発の経験があります。
-  </p>
+                <p style={{ marginTop: '1rem' }}>
+                  <strong>■ ハードウェア / IoT開発</strong><br />
+                  ArduinoやESP32を用いた組み込み開発の経験があります。
+                </p>
 
-  <p style={{ marginTop: '1rem' }}>
-    ステッピングモーター制御や加速度センサーによる状態検知、
-    Firebaseとの連携による通信処理など、クラウドと連動したIoTシステムの構築が可能です。
-  </p>
-</div>
+                <p style={{ marginTop: '1rem' }}>
+                  ステッピングモーター制御や加速度センサーによる状態検知、
+                  Firebaseとの連携による通信処理など、クラウドと連動したIoTシステムの構築が可能です。
+                </p>
+              </div>
             </div>
 
             {/* Business Section */}
