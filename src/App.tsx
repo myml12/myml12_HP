@@ -363,8 +363,8 @@ function HomePage(): React.JSX.Element {
               </div>
 
               <div className="other-project-card">
-                <h4>無線局情報検索</h4>
-                <p>アマチュア無線愛好家のための検索ツール。総務省の無線局情報APIと連携し、コールサイン・免許人名称・地域から詳細情報を検索可能。JCC（全国地方公共団体コード）データの処理と地域検索機能の実装により、都道府県・市区町村単位での柔軟な検索を実現。</p>
+                <h4>無線局情報検索アプリ</h4>
+                <p>アマチュア無線愛好家のための検索ツール。総務省の無線局情報APIと連携し、コールサイン・免許人名称・地域から詳細情報を検索可能。JCCデータの処理と地域検索機能の実装により、都道府県・市区町村単位での柔軟な検索を実現。</p>
                 <div className="tech-tags-small">
                   <span>HTML5</span>
                   <span>CSS3</span>
@@ -374,6 +374,7 @@ function HomePage(): React.JSX.Element {
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
                   <a href="https://hamradio-search.web.app" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }}>詳細を見る</a>
+                  <a href="https://github.com/myml12/HamRadio-Search" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }}>GitHub</a>
                 </div>
               </div>
             </div>
@@ -428,7 +429,33 @@ function HomePage(): React.JSX.Element {
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem' }}>
+                <div style={{ marginTop: '1.5rem' }}>
+                  <a
+                    href="https://youtu.be/we3MKKmyThs?si=UiE8URIml1cTYfjG"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.4rem',
+                      backgroundColor: '#ffffff',
+                      color: '#ec4899',
+                      border: '1px solid #ec4899',
+                      padding: '0.48rem 0.9rem',
+                      fontSize: '0.9rem',
+                      marginLeft: '0.35rem'
+                    }}
+                    aria-label="YouTube動画を開く"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M23.498 6.186a2.991 2.991 0 0 0-2.107-2.118C19.52 3.5 12 3.5 12 3.5s-7.52 0-9.391.568A2.991 2.991 0 0 0 .502 6.186 31.36 31.36 0 0 0 0 12a31.36 31.36 0 0 0 .502 5.814 2.991 2.991 0 0 0 2.107 2.118C4.48 20.5 12 20.5 12 20.5s7.52 0 9.391-.568a2.991 2.991 0 0 0 2.107-2.118A31.36 31.36 0 0 0 24 12a31.36 31.36 0 0 0-.502-5.814zM9.75 15.568V8.432L15.818 12 9.75 15.568z" />
+                    </svg>
+                    YouTube
+                  </a>
+                </div>
+                <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.75rem' }}>
                   <a href="https://zenn.dev/myml12/articles/2193ba5fffbc1e" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ flex: 1 }}>記事を読む</a>
                   <a href="https://github.com/myml12/CubeSolver" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1 }}>GitHub</a>
                 </div>
