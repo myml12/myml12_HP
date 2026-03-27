@@ -552,7 +552,7 @@ function HomePage(): React.JSX.Element {
                   <p className="award-card__team">EkiLink -エキリンク-</p>
                   <p className="award-card__text">
                     駅構内を3Dで可視化し、誰もが迷わず安心して移動できるバリアフリー・ナビを目指した取り組み。
-                    国土交通省のデータ仕様に基づき、MapLibre等を用いて複雑な階層構造を再現し、階段うやエスカレーターを回避したバリアフリー経路検索を提供します。
+                    国土交通省のデータ仕様に基づき、MapLibre等を用いて複雑な階層構造を再現し、階段やエスカレーターを回避したバリアフリー経路検索を提供します。
                   </p>
                   <div className="award-card__tags">
                     <span>歩行空間ネットワークデータ</span>
