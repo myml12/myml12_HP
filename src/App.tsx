@@ -124,6 +124,7 @@ function HomePage(): React.JSX.Element {
                 />
               </a>
 
+              {/*
               <a
                 href="https://github.com/myml12"
                 target="_blank"
@@ -140,6 +141,7 @@ function HomePage(): React.JSX.Element {
                   />
                 </div>
               </a>
+              */}
             </div>
             <div className="hero-buttons">
               <a href="#projects" className="btn btn-primary">主要プロジェクト</a>
@@ -168,11 +170,11 @@ function HomePage(): React.JSX.Element {
                   </div>
                   <div className="featured-stats">
                     <div className="stat-item">
-                      <div className="stat-value">5000+</div>
+                      <div className="stat-value">7.3K</div>
                       <div className="stat-label">DL</div>
                     </div>
                     <div className="stat-item">
-                      <div className="stat-value">2000+</div>
+                      <div className="stat-value">4500</div>
                       <div className="stat-label">MAU</div>
                     </div>
                   </div>
@@ -224,11 +226,11 @@ function HomePage(): React.JSX.Element {
                   </div>
                   <div className="featured-stats">
                     <div className="stat-item">
-                      <div className="stat-value">1000+</div>
+                      <div className="stat-value">3.1K</div>
                       <div className="stat-label">DL</div>
                     </div>
                     <div className="stat-item">
-                      <div className="stat-value">600</div>
+                      <div className="stat-value">1900</div>
                       <div className="stat-label">MAU</div>
                     </div>
                   </div>
@@ -278,6 +280,7 @@ function HomePage(): React.JSX.Element {
                   <img src={primeIcon} alt="瞬間素因数分解" style={{ width: '50px', height: '50px', borderRadius: '10px' }} />
                   <h4>瞬間素因数分解</h4>
                 </div>
+                <p style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '-0.35rem', marginBottom: '0.5rem' }}>App Store 累計DL 約1.7K</p>
                 <p>最大11桁対応の高速素因数分解アルゴリズム。数学的な課題を効率的に解決するツールとして開発。</p>
                 <div className="tech-tags-small">
                   <span>Swift</span>
@@ -514,7 +517,7 @@ function HomePage(): React.JSX.Element {
 
             <div className="metrics-grid">
               <div className="metric-card">
-                <div className="metric-value">8.6K</div>
+                <div className="metric-value">13K</div>
                 <div className="metric-label">総ダウンロード数</div>
                 <div className="metric-note">App Store</div>
               </div>
@@ -524,7 +527,7 @@ function HomePage(): React.JSX.Element {
                 <div className="metric-note">App Store</div>
               </div>
               <div className="metric-card">
-                <div className="metric-value">2K</div>
+                <div className="metric-value">4.5K</div>
                 <div className="metric-label">MAU</div>
                 <div className="metric-note">RhythMap</div>
               </div>
