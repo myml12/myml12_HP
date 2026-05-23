@@ -88,6 +88,15 @@ function HomePage(): React.JSX.Element {
                 </div>
                 <span className="social-text">myml12</span>
               </a>
+              <a href="https://zenn.dev/myml12" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Zenn">
+                <div className="social-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M.264 23.771h4.984c.264 0 .498-.147.645-.352L19.614.874c.176-.293-.029-.645-.381-.645h-4.72c-.235 0-.44.117-.557.323L.03 23.361c-.088.176.029.41.234.41z" fill="currentColor" />
+                    <path d="M17.445 23.419l6.479-10.408c.205-.323-.029-.733-.41-.733h-4.691c-.176 0-.352.088-.44.235l-6.655 10.643c-.176.264.029.616.352.616h4.779c.234-.001.468-.118.586-.353z" fill="currentColor" />
+                  </svg>
+                </div>
+                <span className="social-text">Zenn</span>
+              </a>
               <a href="https://x.com/myml_now" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="X (Twitter)">
                 <div className="social-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,14 +104,6 @@ function HomePage(): React.JSX.Element {
                   </svg>
                 </div>
                 <span className="social-text">@myml_now</span>
-              </a>
-              <a href="https://zenn.dev/myml12" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Zenn">
-                <div className="social-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.877 0C5.42 0 .163 5.257.163 11.714c0 5.13 3.274 9.505 7.877 11.134-.108-.949-.199-2.403.041-3.434.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.487.535 6.458 0 11.714-5.257 11.714-11.714C23.592 5.257 18.335.001 11.877.001z" fill="currentColor" />
-                  </svg>
-                </div>
-                <span className="social-text">Zenn</span>
               </a>
             </div>
             <p className="hero-subtitle">iOS & Web Developer</p>
@@ -170,11 +171,11 @@ function HomePage(): React.JSX.Element {
                   </div>
                   <div className="featured-stats">
                     <div className="stat-item">
-                      <div className="stat-value">7.3K</div>
+                      <div className="stat-value">7.4K</div>
                       <div className="stat-label">DL</div>
                     </div>
                     <div className="stat-item">
-                      <div className="stat-value">4500</div>
+                      <div className="stat-value">2900</div>
                       <div className="stat-label">MAU</div>
                     </div>
                   </div>
@@ -226,11 +227,11 @@ function HomePage(): React.JSX.Element {
                   </div>
                   <div className="featured-stats">
                     <div className="stat-item">
-                      <div className="stat-value">3.1K</div>
+                      <div className="stat-value">3.4K</div>
                       <div className="stat-label">DL</div>
                     </div>
                     <div className="stat-item">
-                      <div className="stat-value">1900</div>
+                      <div className="stat-value">3000</div>
                       <div className="stat-label">MAU</div>
                     </div>
                   </div>
