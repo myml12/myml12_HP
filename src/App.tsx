@@ -10,6 +10,7 @@ import PrimeFactorizationPage from './pages/PrimeFactorizationPage'
 import HitAndBlowPage from './pages/HitAndBlowPage'
 import ToyoinfoPage from './pages/ToyoinfoPage'
 import MirurunPage from './pages/MirurunPage'
+import GenerativeBackdrop from './components/GenerativeBackdrop'
 import rhythmapIcon from './assets/リズマップ.png'
 import chuinfoIcon from './assets/Chuinfo.png'
 import tsugidokoIcon from './assets/ツギドコ.png'
@@ -62,6 +63,7 @@ function HomePage(): React.JSX.Element {
   return (
     <>
       <div className="app">
+        <GenerativeBackdrop />
         <header className="site-header">
           <div className="site-header__inner">
             <a href="#" className="site-header__brand">Yusuke Mizuno</a>
