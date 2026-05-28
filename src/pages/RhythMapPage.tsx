@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css'
 import rhythmapLogo from '../assets/Rhythmap_logo.png'
+import SiteFooter from '../components/SiteFooter'
 
 function RhythMapPage(): React.JSX.Element {
     const [showFullCredits, setShowFullCredits] = useState(false)
@@ -1030,6 +1031,7 @@ negoppi3@gmail.com`}
                     </div>
                 </div>
             </section>
+            <SiteFooter />
         </div>
     )
 }

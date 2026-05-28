@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css'
+import SiteFooter from '../components/SiteFooter'
 
 function PrivacyPage(): React.JSX.Element {
   useEffect(() => {
@@ -34,7 +35,7 @@ function PrivacyPage(): React.JSX.Element {
         <div className="container">
           <div className="info-card">
             <p style={{ marginBottom: '2rem', color: 'var(--text-secondary)' }}>
-              本プライバシーポリシー（以下、「本ポリシー」）は、個人が提供する「リズマップ」アプリケーション（以下、「本アプリ」）において、利用者の個人情報の取り扱いについて定めるものです。本アプリを利用することにより、本ポリシーに同意したものとみなされます。
+              本プライバシーポリシー（以下、「本ポリシー」）は、MINAMO Studio（以下、「当事業者」）が提供する「リズマップ」アプリケーション（以下、「本アプリ」）において、利用者の個人情報の取り扱いについて定めるものです。本アプリを利用することにより、本ポリシーに同意したものとみなされます。
             </p>
 
             <h3 style={{ color: 'var(--accent-primary)', marginTop: '2rem', marginBottom: '1rem' }}>第1条（個人情報の収集方法）</h3>
@@ -49,7 +50,7 @@ function PrivacyPage(): React.JSX.Element {
             </ul>
 
             <h3 style={{ color: 'var(--accent-primary)', marginTop: '2rem', marginBottom: '1rem' }}>第3条（個人情報の第三者提供）</h3>
-            <p>当社は、次に掲げる場合を除いて、個人情報を第三者に提供することはありません。</p>
+            <p>当事業者は、次に掲げる場合を除いて、個人情報を第三者に提供することはありません。</p>
             <ul style={{ paddingLeft: '1.5rem', lineHeight: '1.8' }}>
               <li>利用者の同意がある場合</li>
               <li>法令に基づく場合</li>
@@ -63,7 +64,7 @@ function PrivacyPage(): React.JSX.Element {
 
             <h3 style={{ color: 'var(--accent-primary)', marginTop: '2rem', marginBottom: '1rem' }}>第6条（位置情報の利用）</h3>
             <p>本アプリは、利用者の位置情報を要求しますが、これらの情報は利用者の利便性向上のためにのみ使用されます。</p>
-            <p>本アプリの提供者は、位置情報を閲覧することはありません。</p>
+            <p>当事業者は、利用者の位置情報を閲覧することはありません。</p>
 
             <h3 style={{ color: 'var(--accent-primary)', marginTop: '2rem', marginBottom: '1rem' }}>第7条（プライバシーポリシーの変更）</h3>
             <p>本ポリシーは、必要に応じて変更することがあります。変更後のポリシーは、本アプリ上に表示した時点から効力を生じるものとします。</p>
@@ -103,6 +104,7 @@ function PrivacyPage(): React.JSX.Element {
           </div>
         </div>
       </section>
+      <SiteFooter />
     </div>
   )
 }

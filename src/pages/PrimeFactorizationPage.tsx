@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css'
 import primeIcon from '../assets/瞬間素因数分解.png'
+import SiteFooter from '../components/SiteFooter'
 
 function PrimeFactorizationPage(): React.JSX.Element {
   useEffect(() => {
@@ -146,6 +147,7 @@ function PrimeFactorizationPage(): React.JSX.Element {
           </div>
         </div>
       </section>
+      <SiteFooter />
     </div>
   )
 }

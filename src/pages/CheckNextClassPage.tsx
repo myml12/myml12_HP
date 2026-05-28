@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css'
 import tsugidokoIcon from '../assets/ツギドコ.png'
+import SiteFooter from '../components/SiteFooter'
 
 function CheckNextClassPage(): React.JSX.Element {
     useEffect(() => {
@@ -223,6 +224,7 @@ function CheckNextClassPage(): React.JSX.Element {
                     </div>
                 </div>
             </section>
+            <SiteFooter />
         </div>
     )
 }

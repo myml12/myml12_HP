@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css'
 import hitAndBlowIcon from '../assets/hit_and_blow_analyze.png'
+import SiteFooter from '../components/SiteFooter'
 
 function HitAndBlowPage(): React.JSX.Element {
   useEffect(() => {
@@ -151,6 +152,7 @@ function HitAndBlowPage(): React.JSX.Element {
           </div>
         </div>
       </section>
+      <SiteFooter />
     </div>
   )
 }

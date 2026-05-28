@@ -10,7 +10,8 @@ import PrimeFactorizationPage from './pages/PrimeFactorizationPage'
 import HitAndBlowPage from './pages/HitAndBlowPage'
 import ToyoinfoPage from './pages/ToyoinfoPage'
 import MirurunPage from './pages/MirurunPage'
-import GenerativeBackdrop from './components/GenerativeBackdrop'
+import SiteFooter from './components/SiteFooter'
+import minamoLogoOnly from './assets/MINAMO_Studio_logo_only.png'
 import rhythmapIcon from './assets/リズマップ.png'
 import chuinfoIcon from './assets/Chuinfo.png'
 import tsugidokoIcon from './assets/ツギドコ.png'
@@ -63,10 +64,12 @@ function HomePage(): React.JSX.Element {
   return (
     <>
       <div className="app">
-        <GenerativeBackdrop />
         <header className="site-header">
           <div className="site-header__inner">
-            <a href="#" className="site-header__brand">Yusuke Mizuno</a>
+            <a href="#" className="site-header__brand" aria-label="MINAMO Studio トップへ">
+              <span className="brand-wordmark">MINAMO Studio</span>
+              <img src={minamoLogoOnly} alt="" className="brand-logo" aria-hidden="true" />
+            </a>
             <nav className="site-header__nav" aria-label="セクションナビゲーション">
               <a href="#projects" className="site-header__link">Projects</a>
               <a href="#achievements" className="site-header__link">Metrics</a>
@@ -80,7 +83,10 @@ function HomePage(): React.JSX.Element {
         {/* Hero Section */}
         <section className="hero">
           <div className="hero-content">
-            <h1 className="hero-title">Yusuke Mizuno</h1>
+            <div className="hero-brand-lockup">
+              <h1 className="hero-wordmark">MINAMO Studio</h1>
+              <img src={minamoLogoOnly} alt="" className="hero-brand-logo" aria-hidden="true" />
+            </div>
             <div className="hero-social">
               <a href="https://github.com/myml12" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
                 <div className="social-icon">
@@ -108,9 +114,9 @@ function HomePage(): React.JSX.Element {
                 <span className="social-text">@myml_now</span>
               </a>
             </div>
-            <p className="hero-subtitle">iOS & Web Developer</p>
+            <p className="hero-subtitle">Product Studio / App & Web Development</p>
             <p className="hero-description">
-              日常生活をより便利に、そして面白くすることを目指し、様々な分野でアプリ開発を行っています。学生生活からエンターテイメントまで、幅広い領域で活動しています。
+              日常にある小さな不便や情報の分断に向き合い、使うたびに価値を感じられるプロダクトへ育てる開発スタジオです。学生向け情報管理アプリや音楽ゲーム領域の情報サービスを中心に、企画・開発・継続運営まで一貫して取り組んでいます。
             </p>
             <div className="github-stats-grid hero-github-stats">
               <a
@@ -715,6 +721,7 @@ function HomePage(): React.JSX.Element {
             </div>
           </div>
         </section>
+        <SiteFooter />
       </div>
     </>
   )

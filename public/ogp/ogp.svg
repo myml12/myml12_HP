@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="MINAMO Studio OGP image">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0fdff" />
+      <stop offset="52%" stop-color="#ecfeff" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.12" cy="0.15" r="0.7">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.88" cy="0.1" r="0.65">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.26" />
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glowA)" />
+  <rect width="1200" height="630" fill="url(#glowB)" />
+
+  <g opacity="0.35" stroke="#38bdf8" fill="none">
+    <path d="M0 500 C 220 420, 450 540, 700 460 C 920 390, 1080 480, 1200 450" stroke-width="2.2" />
+    <path d="M0 540 C 260 470, 500 585, 760 520 C 980 466, 1110 540, 1200 520" stroke-width="1.6" />
+  </g>
+
+  <g transform="translate(132 116)">
+    <rect x="0" y="0" width="96" height="96" rx="28" fill="url(#mark)" />
+    <path d="M18 58c8-11.2 14.3-20.8 21-20.8 6.5 0 11.7 8.1 17.4 15.8 4.6 6.1 8.7 11.7 14.7 11.7 2.7 0 5.2-.8 7.9-2.4v10.4c-2.6 1.2-5.4 1.9-9.3 1.9-11.4 0-17.5-8.2-22.8-15.4-4.2-5.8-6.5-9-8.8-9-2.1 0-5.9 5.8-11.4 14.3H18v-5.5z" fill="#ecfeff" />
+  </g>
+
+  <text x="132" y="304" fill="#0f172a" font-family="Inter, 'Noto Sans JP', sans-serif" font-size="72" font-weight="700" letter-spacing="0.4">MINAMO Studio</text>
+  <text x="132" y="366" fill="#0369a1" font-family="Inter, 'Noto Sans JP', sans-serif" font-size="36" font-weight="500">Product Studio / App &amp; Web Development</text>
+  <text x="132" y="426" fill="#475569" font-family="Inter, 'Noto Sans JP', sans-serif" font-size="30" font-weight="400">Portfolio " iOS " Web " Creative Engineering</text>
+</svg>

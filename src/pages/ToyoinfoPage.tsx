@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css'
 import toyoinfoIcon from '../assets/toyoinfo.png'
+import SiteFooter from '../components/SiteFooter'
 
 function ToyoinfoPage(): React.JSX.Element {
   useEffect(() => {
@@ -151,6 +152,7 @@ function ToyoinfoPage(): React.JSX.Element {
           </div>
         </div>
       </section>
+      <SiteFooter />
     </div>
   )
 }

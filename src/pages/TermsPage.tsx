@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css'
+import SiteFooter from '../components/SiteFooter'
 
 function TermsPage(): React.JSX.Element {
   useEffect(() => {
@@ -34,7 +35,7 @@ function TermsPage(): React.JSX.Element {
         <div className="container">
           <div className="info-card">
             <p style={{ marginBottom: '2rem', color: 'var(--text-secondary)' }}>
-              本利用規約（以下、「本規約」）は、個人が提供する「リズマップ」アプリケーション（以下、「本アプリ」）の利用条件を定めるものです。本アプリを利用される前に、本規約をよくお読みください。本アプリを利用することにより、本規約に同意したものとみなされます。
+              本利用規約（以下、「本規約」）は、MINAMO Studio（以下、「当事業者」）が提供する「リズマップ」アプリケーション（以下、「本アプリ」）の利用条件を定めるものです。本アプリを利用される前に、本規約をよくお読みください。本アプリを利用することにより、本規約に同意したものとみなされます。
             </p>
 
             <h3 style={{ color: 'var(--accent-primary)', marginTop: '2rem', marginBottom: '1rem' }}>第1条（適用）</h3>
@@ -54,7 +55,7 @@ function TermsPage(): React.JSX.Element {
             </ul>
 
             <h3 style={{ color: 'var(--accent-primary)', marginTop: '2rem', marginBottom: '1rem' }}>第4条（情報の正確性）</h3>
-            <p>1. 本アプリはユーザーが提供する情報に基づいて情報を提供しています。運営チームでできる限り精査等は行いますが、掲載される情報の正確性、完全性、最新性は保証されません。</p>
+            <p>1. 本アプリはユーザーが提供する情報に基づいて情報を提供しています。当事業者でできる限り精査等は行いますが、掲載される情報の正確性、完全性、最新性は保証されません。</p>
             <p>2. 本アプリで得た情報に誤りがあった場合、それによって生じた利用者の不利益、損害について、一切の責任を負いません。</p>
 
             <h3 style={{ color: 'var(--accent-primary)', marginTop: '2rem', marginBottom: '1rem' }}>第5条（免責事項）</h3>
@@ -72,7 +73,7 @@ function TermsPage(): React.JSX.Element {
             <p>本規約は、必要と判断した場合には、いつでも変更することができます。変更後の規約は、当サイトの更新時点から効力を生じるものとします。</p>
 
             <h3 style={{ color: 'var(--accent-primary)', marginTop: '2rem', marginBottom: '1rem' }}>第8条（準拠法および管轄）</h3>
-            <p>本規約の解釈にあたっては、日本法を準拠法とします。本アプリに関連して生じた紛争については、提供者の住所地を管轄する裁判所を専属的合意管轄裁判所とします。</p>
+            <p>本規約の解釈にあたっては、日本法を準拠法とします。本アプリに関連して生じた紛争については、当事業者の主たる事業所所在地を管轄する裁判所を専属的合意管轄裁判所とします。</p>
           </div>
         </div>
       </section>
@@ -106,6 +107,7 @@ function TermsPage(): React.JSX.Element {
           </div>
         </div>
       </section>
+      <SiteFooter />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css'
+import SiteFooter from '../components/SiteFooter'
 import chuinfoIcon from '../assets/Chuinfo.png'
 
 function ChuinfoPage(): React.JSX.Element {
@@ -192,7 +193,7 @@ function ChuinfoPage(): React.JSX.Element {
                             <span className="icon">ℹ️</span>
                             Chuinfoについて
                         </h3>
-                        <p>本アプリは個人（学生）が運営するアプリであり、非公式なものです。</p>
+                        <p>本アプリは MINAMO Studio が運営する非公式アプリです。</p>
                     </div>
                 </div>
             </section>
@@ -247,6 +248,7 @@ function ChuinfoPage(): React.JSX.Element {
                     </div>
                 </div>
             </section>
+            <SiteFooter />
         </div>
     )
 }

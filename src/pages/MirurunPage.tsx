@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css'
 import mirurunIcon from '../assets/mirurun.png'
+import SiteFooter from '../components/SiteFooter'
 
 function MirurunPage(): React.JSX.Element {
   useEffect(() => {
@@ -275,6 +276,7 @@ function MirurunPage(): React.JSX.Element {
           </div>
         </div>
       </section>
+      <SiteFooter />
     </div>
   )
 }
