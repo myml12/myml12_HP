@@ -11,6 +11,7 @@ import HitAndBlowPage from './pages/HitAndBlowPage'
 import ToyoinfoPage from './pages/ToyoinfoPage'
 import MirurunPage from './pages/MirurunPage'
 import SiteFooter from './components/SiteFooter'
+import MinamoBrandChar from './components/MinamoBrandChar'
 import minamoLogoOnly from './assets/MINAMO_Studio_logo_only.png'
 import rhythmapIcon from './assets/リズマップ.png'
 import chuinfoIcon from './assets/Chuinfo.png'
@@ -67,8 +68,7 @@ function HomePage(): React.JSX.Element {
         <header className="site-header">
           <div className="site-header__inner">
             <a href="#" className="site-header__brand" aria-label="MINAMO Studio トップへ">
-              <span className="brand-wordmark">MINAMO Studio</span>
-              <img src={minamoLogoOnly} alt="" className="brand-logo" aria-hidden="true" />
+              <img src={minamoLogoOnly} alt="MINAMO Studio" className="brand-logo" />
             </a>
             <nav className="site-header__nav" aria-label="セクションナビゲーション">
               <a href="#projects" className="site-header__link">Projects</a>
@@ -84,7 +84,9 @@ function HomePage(): React.JSX.Element {
         <section className="hero">
           <div className="hero-content">
             <div className="hero-brand-lockup">
-              <h1 className="hero-wordmark">MINAMO Studio</h1>
+              <h1 className="hero-wordmark">
+                <MinamoBrandChar variant="hero" />
+              </h1>
               <img src={minamoLogoOnly} alt="" className="hero-brand-logo" aria-hidden="true" />
             </div>
             <div className="hero-social">
