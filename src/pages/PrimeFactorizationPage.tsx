@@ -10,13 +10,12 @@ function PrimeFactorizationPage(): React.JSX.Element {
   }, [])
 
   return (
-    <div className="app">
+    <div className="app prime-factorization-page">
       <Link to="/" className="back-button">
         <span>←</span>
         戻る
       </Link>
 
-      {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
           <div className="hero-header">
@@ -29,14 +28,14 @@ function PrimeFactorizationPage(): React.JSX.Element {
             </div>
           </div>
           <p className="hero-description">
-            最大11桁対応の高速素因数分解アルゴリズム。数学的な課題を効率的に解決するツールとして開発。複雑な数値計算を瞬時に処理し、指数表記で結果を表示します。
+            数を入力するだけで高速に素因数分解。最大約20桁まで対応し、結果は 2<sup>2</sup> × 3 のような指数表記でも表示が可能です。
           </p>
           <div className="hero-buttons">
             <a href="#features" className="btn btn-primary">
               機能を見る
             </a>
-            <a href="#tech" className="btn btn-outline">
-              技術詳細
+            <a href="#algorithm" className="btn btn-outline">
+              処理の流れ
             </a>
             <a href="https://apps.apple.com/jp/app/%E7%9E%AC%E9%96%93%E7%B4%A0%E5%9B%A0%E6%95%B0%E5%88%86%E8%A7%A3-prime-factorization/id6478605149" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
               App Store
@@ -45,80 +44,120 @@ function PrimeFactorizationPage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* Features Section */}
       <section id="features" className="section">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">主な機能</h2>
-            <p className="section-subtitle">高速で正確な素因数分解</p>
           </div>
 
           <div className="features-grid">
             <div className="feature-card">
-              <h3>高速アルゴリズム</h3>
-              <p>最大11桁の数値を瞬時に素因数分解。効率的なアルゴリズムにより、複雑な計算も高速に処理します。</p>
+              <h3>すぐに結果が出る</h3>
+              <p>入力した数を、その場で素因数に分解します。</p>
             </div>
 
             <div className="feature-card">
-              <h3>指数表記表示</h3>
-              <p>結果を指数表記で表示。同じ素因数をまとめて見やすく表現し、数学的な理解を助けます。</p>
+              <h3>最大約20桁</h3>
+              <p>手計算では大変な大きな整数にも対応します。</p>
             </div>
 
             <div className="feature-card">
-              <h3>シンプルなUI</h3>
-              <p>直感的なインターフェースで、誰でも簡単に素因数分解を実行できます。</p>
+              <h3>指数表記</h3>
+              <p>同じ素数をまとめて、見やすく表示します。</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Tech Section */}
-      <section id="tech" className="section section-alt">
+      <section id="algorithm" className="section section-alt">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">技術スタック</h2>
-            <p className="section-subtitle">モダンなiOS開発技術</p>
+            <h2 className="section-title">処理の流れ</h2>
+            <p className="section-subtitle">
+              試割り・Miller–Rabin・Pollard&apos;s rho の3つを組み合わせ、入力から分解完了まで自動で進みます
+            </p>
           </div>
 
-          <div className="info-grid">
-            <div className="info-card">
-              <h3>Swift</h3>
-              <p>型安全で高性能なプログラミング言語</p>
-            </div>
+          <div className="algo-flow-panel">
+            <div className="algo-flow algo-flow--hero" aria-label="素因数分解の処理フロー">
+              <div className="algo-flow-node algo-flow-node--start">
+                <span className="algo-flow-step">START</span>
+                入力した数
+              </div>
 
-            <div className="info-card">
-              <h3>SwiftUI</h3>
-              <p>宣言的UIフレームワークによるモダンなインターフェース</p>
-            </div>
+              <div className="algo-flow-arrow" aria-hidden="true">↓</div>
 
-            <div className="info-card">
-              <h3>アルゴリズム</h3>
-              <p>効率的な素因数分解アルゴリズムの実装</p>
+              <div className="algo-flow-node algo-flow-node--accent">
+                <span className="algo-flow-badge">試割り</span>
+                2〜47 の小さい素数で割る
+              </div>
+
+              <div className="algo-flow-arrow" aria-hidden="true">↓</div>
+
+              <div className="algo-flow-node algo-flow-node--decision">
+                まだ 1 より大きい数が残っている？
+              </div>
+
+              <div className="algo-flow-branch algo-flow-branch--hero">
+                <div className="algo-flow-branch-col">
+                  <span className="algo-flow-branch-label">いいえ</span>
+                  <div className="algo-flow-node algo-flow-node--end">
+                    <span className="algo-flow-step">END</span>
+                    分解完了
+                  </div>
+                </div>
+
+                <div className="algo-flow-branch-col algo-flow-branch-col--wide">
+                  <span className="algo-flow-branch-label">はい</span>
+
+                  <div className="algo-flow-node algo-flow-node--accent algo-flow-node--decision">
+                    <span className="algo-flow-badge">Miller–Rabin</span>
+                    残りは素数？
+                  </div>
+
+                  <div className="algo-flow-subbranch algo-flow-subbranch--hero">
+                    <div className="algo-flow-branch-col">
+                      <span className="algo-flow-branch-label">素数</span>
+                      <div className="algo-flow-node">答えにその数を入れる</div>
+                    </div>
+
+                    <div className="algo-flow-branch-col">
+                      <span className="algo-flow-branch-label">まだ割れる</span>
+                      <div className="algo-flow-node algo-flow-node--accent">
+                        <span className="algo-flow-badge">Pollard&apos;s rho</span>
+                        因数を1つ見つける
+                      </div>
+                      <div className="algo-flow-arrow algo-flow-arrow--sm" aria-hidden="true">↓</div>
+                      <div className="algo-flow-node">因数と残りの数に分ける</div>
+                      <div className="algo-flow-arrow algo-flow-arrow--sm" aria-hidden="true">↓</div>
+                      <div className="algo-flow-node algo-flow-node--loop">
+                        それぞれに同じ処理を繰り返す
+                      </div>
+                      <p className="algo-flow-loop-note">↺ 試割りへ戻る</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="algo-legend-grid">
+            <div className="algo-legend-card">
+              <h3>試割り</h3>
+              <p>よく出る小さい素数を先に処理。学校でやる「順に割る」の部分です。</p>
+            </div>
+            <div className="algo-legend-card">
+              <h3>Miller–Rabin</h3>
+              <p>残りが素数かどうかを判定。素数ならそこで確定します。</p>
+            </div>
+            <div className="algo-legend-card">
+              <h3>Pollard&apos;s rho</h3>
+              <p>まだ割れる数から因数を1つ取り出し、分けた両方をまた分解します。</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">制作の思い</h2>
-          </div>
-          <div className="about-content">
-            <div className="about-column">
-              <p>
-                数学的な課題を効率的に解決するツールとして開発しました。素因数分解は数学の基礎でありながら、大きな数値の処理には時間がかかります。このアプリは、その課題を技術で解決し、誰でも簡単に素因数分解を実行できるようにすることを目指しています。
-              </p>
-              <p>
-                アルゴリズムの最適化に注力し、最大11桁の数値でも瞬時に結果を表示できるよう実装しました。また、結果を指数表記で表示することで、数学的な理解を深められるよう配慮しています。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
       <section className="contact-section">
         <div className="container">
           <div className="contact-card">
@@ -153,4 +192,3 @@ function PrimeFactorizationPage(): React.JSX.Element {
 }
 
 export default PrimeFactorizationPage
-

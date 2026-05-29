@@ -2188,4 +2188,316 @@
   }
 }
 
+/* Prime factorization — algorithm docs */
+.prime-factorization-page code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9em;
+  padding: 0.12em 0.4em;
+  border-radius: 6px;
+  background: rgba(14, 165, 233, 0.08);
+  color: var(--accent-primary);
+  word-break: break-word;
+}
+
+.algo-overview-list {
+  margin: 1.25rem 0 1.75rem;
+  padding-left: 1.35rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+}
+
+.algo-overview-list li + li {
+  margin-top: 0.35rem;
+}
+
+.algo-detail-list {
+  margin: 0.75rem 0 1.5rem;
+  padding-left: 1.35rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+}
+
+.algo-detail-list li + li {
+  margin-top: 0.35rem;
+}
+
+.algo-flow-panel {
+  margin: 0 0 2.5rem;
+  padding: clamp(2rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 3rem);
+  border-radius: 28px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 249, 255, 0.92) 100%);
+  border: 2px solid rgba(14, 165, 233, 0.22);
+  box-shadow:
+    0 28px 80px rgba(14, 165, 233, 0.12),
+    0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.algo-flow {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.algo-flow-panel .algo-flow {
+  margin-top: 0;
+  gap: 0.85rem;
+}
+
+.algo-flow--hero {
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.algo-flow-node {
+  width: min(100%, 22rem);
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.algo-flow--hero .algo-flow-node {
+  width: min(100%, 26rem);
+  padding: clamp(1rem, 2.5vw, 1.35rem) clamp(1.25rem, 3vw, 1.75rem);
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  line-height: 1.45;
+  border-radius: 18px;
+  border-width: 2px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+.algo-flow--hero .algo-flow-node--start,
+.algo-flow--hero .algo-flow-node--end {
+  width: min(100%, 20rem);
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+}
+
+.algo-flow--hero .algo-flow-node--accent {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.14) 0%, rgba(255, 255, 255, 0.98) 100%);
+  border-color: rgba(14, 165, 233, 0.45);
+  box-shadow: 0 16px 40px rgba(14, 165, 233, 0.15);
+}
+
+.algo-flow--hero .algo-flow-node--loop {
+  border-style: dashed;
+  border-color: rgba(14, 165, 233, 0.5);
+  background: rgba(14, 165, 233, 0.05);
+}
+
+.algo-flow-badge {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: clamp(0.75rem, 1.6vw, 0.9rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+}
+
+.algo-flow-step {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: clamp(0.7rem, 1.4vw, 0.8rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+}
+
+.algo-flow--hero .algo-flow-arrow {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin: 0.15rem 0;
+}
+
+.algo-flow--hero .algo-flow-node--decision {
+  width: min(100%, 30rem);
+  padding: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.algo-flow-branch--hero {
+  gap: 2rem 3rem;
+  margin-top: 0.75rem;
+}
+
+.algo-flow-branch-col--wide {
+  min-width: min(100%, 20rem);
+  max-width: 36rem;
+}
+
+.algo-flow-subbranch--hero {
+  gap: 2rem 2.5rem;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+}
+
+.algo-flow--hero .algo-flow-branch-label {
+  font-size: clamp(0.8rem, 1.6vw, 0.95rem);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(14, 165, 233, 0.1);
+}
+
+.algo-flow--hero .algo-flow-loop-note {
+  margin-top: 0.5rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 800;
+}
+
+.algo-legend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.algo-legend-card {
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(219, 227, 239, 0.9);
+}
+
+.algo-legend-card h3 {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: var(--text-primary);
+}
+
+.algo-legend-card p {
+  margin: 0;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .algo-legend-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.algo-flow-node--decision {
+  border-style: dashed;
+  background: rgba(14, 165, 233, 0.06);
+}
+
+.algo-flow-node--end {
+  border-color: rgba(34, 197, 94, 0.35);
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.algo-flow-arrow {
+  color: var(--accent-primary);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.algo-flow-arrow--sm {
+  font-size: 1rem;
+}
+
+.algo-flow-branch {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem 2rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.algo-flow-branch-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: min(100%, 14rem);
+  max-width: 20rem;
+}
+
+.algo-flow-branch-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+}
+
+.algo-flow-subbranch {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem 1.5rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.algo-flow-loop-note {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.algo-table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(219, 227, 239, 0.9);
+}
+
+.algo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.algo-table th,
+.algo-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(219, 227, 239, 0.7);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.algo-table th {
+  font-weight: 700;
+  color: var(--text-primary);
+  background: rgba(14, 165, 233, 0.06);
+}
+
+.algo-table tr:last-child th,
+.algo-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 640px) {
+  .algo-flow-branch,
+  .algo-flow-subbranch,
+  .algo-flow-branch--hero,
+  .algo-flow-subbranch--hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .algo-flow-panel {
+    padding: 1.75rem 1rem;
+    border-radius: 20px;
+  }
+
+  .algo-flow--hero .algo-flow-node {
+    width: 100%;
+  }
+}
+
 

@@ -292,7 +292,7 @@ function HomePage(): React.JSX.Element {
                   <h4>瞬間素因数分解</h4>
                 </div>
                 <p style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '-0.35rem', marginBottom: '0.5rem' }}>App Store 累計DL 約1.7K</p>
-                <p>最大11桁対応の高速素因数分解アルゴリズム。数学的な課題を効率的に解決するツールとして開発。</p>
+                <p>数を入力するだけで素因数分解。Pollard's rho法など複数のアルゴリズムを組み合わせ、高速に計算を行うことが可能です。</p>
                 <div className="tech-tags-small">
                   <span>Swift</span>
                   <span>SwiftUI</span>
