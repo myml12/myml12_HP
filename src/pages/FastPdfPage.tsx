@@ -37,6 +37,9 @@ function FastPdfPage(): React.JSX.Element {
             <a href="#tech" className="btn btn-outline">
               技術詳細
             </a>
+            <a href="#privacy" className="btn btn-outline">
+              プライバシーポリシー
+            </a>
           </div>
         </div>
       </section>
@@ -103,6 +106,35 @@ function FastPdfPage(): React.JSX.Element {
             <div className="info-card">
               <h3>UIKit</h3>
               <p>PDF注釈やジェスチャー操作などの高度な編集機能</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" className="section">
+        <div className="container">
+          <div className="info-card">
+            <h3>
+              <span className="icon">🛡️</span>
+              プライバシーポリシー
+            </h3>
+            <p>
+              「FAST PDF」は、PDFファイルおよび編集内容をデバイス内でのみ取り扱うアプリです。個人情報やPDFの内容を当事業者のサーバーへ送信することはありません。
+            </p>
+
+            <h4 style={{ marginTop: '2rem' }}>データ収集について</h4>
+            <ul style={{ marginTop: '1rem', paddingLeft: '1.5rem', lineHeight: '1.8' }}>
+              <li>個人情報の収集・保存は行いません</li>
+              <li>PDFファイルの内容を外部サーバーへ送信しません</li>
+              <li>利用統計や行動データの収集は行いません</li>
+              <li>共有・保存は利用者自身の操作によるiOS標準機能のみを使用します</li>
+            </ul>
+
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
+              <Link to="/fast-pdf/privacy-policy.html" className="btn btn-outline">
+                <span>🛡️</span>
+                プライバシーポリシー全文
+              </Link>
             </div>
           </div>
         </div>

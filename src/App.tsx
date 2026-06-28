@@ -11,6 +11,7 @@ import HitAndBlowPage from './pages/HitAndBlowPage'
 import ToyoinfoPage from './pages/ToyoinfoPage'
 import MirurunPage from './pages/MirurunPage'
 import FastPdfPage from './pages/FastPdfPage'
+import FastPdfPrivacyPage from './pages/FastPdfPrivacyPage'
 import SiteFooter from './components/SiteFooter'
 import MinamoBrandChar from './components/MinamoBrandChar'
 import minamoLogoOnly from './assets/MINAMO_Studio_logo_only.png'
@@ -759,6 +760,7 @@ function App(): React.JSX.Element {
       <Route path="/toyoinfo" element={<ToyoinfoPage />} />
       <Route path="/mirurun" element={<MirurunPage />} />
       <Route path="/fast-pdf" element={<FastPdfPage />} />
+      <Route path="/fast-pdf/privacy-policy.html" element={<FastPdfPrivacyPage />} />
       <Route path="/kiyaku.html" element={<TermsPage />} />
       <Route path="/privacy-policy.html" element={<PrivacyPage />} />
     </Routes>
