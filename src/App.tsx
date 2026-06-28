@@ -10,6 +10,7 @@ import PrimeFactorizationPage from './pages/PrimeFactorizationPage'
 import HitAndBlowPage from './pages/HitAndBlowPage'
 import ToyoinfoPage from './pages/ToyoinfoPage'
 import MirurunPage from './pages/MirurunPage'
+import FastPdfPage from './pages/FastPdfPage'
 import SiteFooter from './components/SiteFooter'
 import MinamoBrandChar from './components/MinamoBrandChar'
 import minamoLogoOnly from './assets/MINAMO_Studio_logo_only.png'
@@ -20,6 +21,7 @@ import primeIcon from './assets/瞬間素因数分解.png'
 import toyoinfoIcon from './assets/toyoinfo.png'
 import mirurunIcon from './assets/mirurun.png'
 import hitAndBlowIcon from './assets/hit_and_blow_analyze.png'
+import fastPdfIcon from './assets/FAST_PDF.png'
 
 const HOME_SCROLL_Y_KEY = 'homeScrollY'
 const SHOULD_RESTORE_HOME_SCROLL_KEY = 'shouldRestoreHomeScroll'
@@ -337,6 +339,22 @@ function HomePage(): React.JSX.Element {
                 <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
                   <Link to="/toyoinfo" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }} onClick={saveHomeScrollPosition}>詳細を見る</Link>
                   <a href="https://apps.apple.com/jp/app/toyoinfo/id6739492265" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }}>App Store</a>
+                </div>
+              </div>
+
+              <div className="other-project-card">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                  <img src={fastPdfIcon} alt="FAST PDF" style={{ width: '50px', height: '50px', borderRadius: '10px' }} />
+                  <h4>FAST PDF</h4>
+                </div>
+                <p>iPhone・iPadでPDFを読み込み、編集し、結合できるシンプルなPDF編集アプリ。資料の整理からメモ書きまで、日常のPDF作業をスムーズに。</p>
+                <div className="tech-tags-small">
+                  <span>Swift</span>
+                  <span>SwiftUI</span>
+                  <span>PDFKit</span>
+                </div>
+                <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
+                  <Link to="/fast-pdf" className="btn btn-outline" style={{ flex: 1, fontSize: '0.85rem', padding: '0.5rem 1rem' }} onClick={saveHomeScrollPosition}>詳細を見る</Link>
                 </div>
               </div>
 
@@ -740,6 +758,7 @@ function App(): React.JSX.Element {
       <Route path="/hit-and-blow" element={<HitAndBlowPage />} />
       <Route path="/toyoinfo" element={<ToyoinfoPage />} />
       <Route path="/mirurun" element={<MirurunPage />} />
+      <Route path="/fast-pdf" element={<FastPdfPage />} />
       <Route path="/kiyaku.html" element={<TermsPage />} />
       <Route path="/privacy-policy.html" element={<PrivacyPage />} />
     </Routes>
