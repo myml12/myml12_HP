@@ -12,6 +12,7 @@ import ToyoinfoPage from './pages/ToyoinfoPage'
 import MirurunPage from './pages/MirurunPage'
 import FastPdfPage from './pages/FastPdfPage'
 import FastPdfPrivacyPage from './pages/FastPdfPrivacyPage'
+import ChuinfoAdvertisingPage from './pages/ChuinfoAdvertisingPage'
 import SiteFooter from './components/SiteFooter'
 import MinamoBrandChar from './components/MinamoBrandChar'
 import minamoLogoOnly from './assets/MINAMO_Studio_logo_only.png'
@@ -240,11 +241,11 @@ function HomePage(): React.JSX.Element {
                   </div>
                   <div className="featured-stats">
                     <div className="stat-item">
-                      <div className="stat-value">3.4K</div>
-                      <div className="stat-label">DL</div>
+                      <div className="stat-value">4,000+</div>
+                      <div className="stat-label">利用者</div>
                     </div>
                     <div className="stat-item">
-                      <div className="stat-value">3000</div>
+                      <div className="stat-value">3,000+</div>
                       <div className="stat-label">MAU</div>
                     </div>
                   </div>
@@ -753,6 +754,7 @@ function App(): React.JSX.Element {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/chuinfo" element={<ChuinfoPage />} />
+      <Route path="/chuinfo/advertising" element={<ChuinfoAdvertisingPage />} />
       <Route path="/rhythmap" element={<RhythMapPage />} />
       <Route path="/checknextclass" element={<CheckNextClassPage />} />
       <Route path="/prime-factorization" element={<PrimeFactorizationPage />} />
