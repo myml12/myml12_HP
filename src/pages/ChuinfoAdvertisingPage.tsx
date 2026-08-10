@@ -44,8 +44,7 @@ function ChuinfoAdvertisingPage(): React.JSX.Element {
               </div>
               <h1>中央大学生に、<br /><em>まっすぐ届く。</em></h1>
               <p className="chuinfo-ad-hero__lead">
-                時間割や課題を確認する学生生活の導線に、あなたのサービスやイベントを届けませんか。
-                Chuinfoでは、学生に役立つ情報の広告掲載を受け付けています。
+                時間割や課題を確認する学生生活の導線に、あなたのサービスやサークル情報を届けませんか？Chuinfoでは、学生に役立つ情報の広告掲載を受け付けています。
               </p>
               <div className="chuinfo-ad-actions">
                 <a href={CONTACT_URL} className="chuinfo-ad-button chuinfo-ad-button--primary">

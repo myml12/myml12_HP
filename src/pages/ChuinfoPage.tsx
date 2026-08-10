@@ -194,6 +194,9 @@ function ChuinfoPage(): React.JSX.Element {
                             Chuinfoについて
                         </h3>
                         <p>本アプリは MINAMO Studio が運営する非公式アプリです。</p>
+                        <h4>広告掲載をご検討の方へ</h4>
+                        <p>Chuinfoでは、中央大学生に向けたサークル・イベントなどのお知らせの掲載を受け付けています。</p>
+                        <Link to="/chuinfo/advertising" className="btn btn-outline">広告掲載のご案内</Link>
                     </div>
                 </div>
             </section>
@@ -254,4 +257,3 @@ function ChuinfoPage(): React.JSX.Element {
 }
 
 export default ChuinfoPage
-
