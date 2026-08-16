@@ -241,10 +241,12 @@
 @media (max-width: 768px) {
   .site-header {
     top: 8px;
+    left: 12px;
     right: 12px;
   }
 
   .site-header__inner {
+    justify-content: space-between;
     gap: 0.5rem;
     padding: 0.5rem 0.65rem;
     border-radius: 12px;
@@ -263,6 +265,11 @@
   .site-header__link {
     font-size: 0.74rem;
     padding: 0.32rem 0.48rem;
+  }
+
+  .site-header__nav {
+    min-width: 0;
+    gap: 0;
   }
 
   .hero {
@@ -2499,5 +2506,3 @@
     width: 100%;
   }
 }
-
-

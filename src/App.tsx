@@ -49,21 +49,27 @@ function HomePage(): React.JSX.Element {
 
   useEffect(() => {
     const anchors = document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')
-    anchors.forEach((anchor) => {
-      anchor.addEventListener('click', function (e: MouseEvent) {
-        e.preventDefault()
-        const href = anchor.getAttribute('href')
-        if (href) {
-          const target = document.querySelector(href)
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            })
-          }
-        }
-      })
-    })
+    const handleAnchorClick = (event: MouseEvent): void => {
+      event.preventDefault()
+      const anchor = event.currentTarget as HTMLAnchorElement
+      const href = anchor.getAttribute('href')
+
+      if (!href) return
+
+      const target = document.querySelector(href)
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }
+    }
+
+    anchors.forEach((anchor) => anchor.addEventListener('click', handleAnchorClick))
+
+    return () => {
+      anchors.forEach((anchor) => anchor.removeEventListener('click', handleAnchorClick))
+    }
   }, [])
 
   return (
@@ -71,7 +77,7 @@ function HomePage(): React.JSX.Element {
       <div className="app">
         <header className="site-header">
           <div className="site-header__inner">
-            <a href="#" className="site-header__brand" aria-label="MINAMO Studio トップへ">
+            <a href="#top" className="site-header__brand" aria-label="MINAMO Studio トップへ">
               <img src={minamoLogoOnly} alt="MINAMO Studio" className="brand-logo" />
             </a>
             <nav className="site-header__nav" aria-label="セクションナビゲーション">
@@ -85,7 +91,7 @@ function HomePage(): React.JSX.Element {
         </header>
 
         {/* Hero Section */}
-        <section className="hero">
+        <section id="top" className="hero">
           <div className="hero-content">
             <div className="hero-brand-lockup">
               <h1 className="hero-wordmark">
@@ -185,7 +191,7 @@ function HomePage(): React.JSX.Element {
                   </div>
                   <div className="featured-stats">
                     <div className="stat-item">
-                      <div className="stat-value">7.4K</div>
+                      <div className="stat-value">7.62K</div>
                       <div className="stat-label">DL</div>
                     </div>
                     <div className="stat-item">
@@ -241,8 +247,8 @@ function HomePage(): React.JSX.Element {
                   </div>
                   <div className="featured-stats">
                     <div className="stat-item">
-                      <div className="stat-value">4,000+</div>
-                      <div className="stat-label">利用者</div>
+                      <div className="stat-value">4.10K</div>
+                      <div className="stat-label">DL</div>
                     </div>
                     <div className="stat-item">
                       <div className="stat-value">3,000+</div>
@@ -295,7 +301,7 @@ function HomePage(): React.JSX.Element {
                   <img src={primeIcon} alt="瞬間素因数分解" style={{ width: '50px', height: '50px', borderRadius: '10px' }} />
                   <h4>瞬間素因数分解</h4>
                 </div>
-                <p style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '-0.35rem', marginBottom: '0.5rem' }}>App Store 累計DL 約1.7K</p>
+                <p style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '-0.35rem', marginBottom: '0.5rem' }}>App Store 累計DL 1.81K</p>
                 <p>数を入力するだけで素因数分解。Pollard's rho法など複数のアルゴリズムを組み合わせ、高速に計算を行うことが可能です。</p>
                 <div className="tech-tags-small">
                   <span>Swift</span>
@@ -313,6 +319,7 @@ function HomePage(): React.JSX.Element {
                   <img src={hitAndBlowIcon} alt="Hit and Blow 解析" style={{ width: '50px', height: '50px', borderRadius: '10px' }} />
                   <h4>Hit and Blow 解析</h4>
                 </div>
+                <p style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '-0.35rem', marginBottom: '0.5rem' }}>App Store 累計DL 385</p>
                 <p>最適解アルゴリズムによるパズルゲーム解析。論理的思考を支援するツールとして実装。</p>
                 <div className="tech-tags-small">
                   <span>Swift</span>
@@ -331,6 +338,7 @@ function HomePage(): React.JSX.Element {
                   <img src={toyoinfoIcon} alt="Toyoinfo" style={{ width: '50px', height: '50px', borderRadius: '10px' }} />
                   <h4>Toyoinfo</h4>
                 </div>
+                <p style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '-0.35rem', marginBottom: '0.5rem' }}>App Store 累計DL 238</p>
                 <p>東洋大学専用学習支援アプリ。学生生活の効率化を目的に、時間割と課題管理を統合。</p>
                 <div className="tech-tags-small">
                   <span>Swift</span>
@@ -365,6 +373,7 @@ function HomePage(): React.JSX.Element {
                   <img src={mirurunIcon} alt="みるるん" style={{ width: '50px', height: '50px', borderRadius: '10px' }} />
                   <h4>みるるん</h4>
                 </div>
+                <p style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '-0.35rem', marginBottom: '0.5rem' }}>App Store 累計DL 72</p>
                 <p>動画自動検知ブラウザアプリ。ウェブページ上の動画をリール形式で快適に視聴できる体験を提供。</p>
                 <div className="tech-tags-small">
                   <span>Swift</span>
@@ -383,6 +392,7 @@ function HomePage(): React.JSX.Element {
                   <img src={tsugidokoIcon} alt="ツギドコ" style={{ width: '50px', height: '50px', borderRadius: '10px' }} />
                   <h4>ツギドコ</h4>
                 </div>
+                <p style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '-0.35rem', marginBottom: '0.5rem' }}>App Store 累計DL 362</p>
                 <p>iOSウィジェット教室案内アプリ。次の教室を瞬時に確認できるよう、WidgetKitを活用した実用的なツール。</p>
                 <div className="tech-tags-small">
                   <span>Swift</span>
@@ -548,7 +558,7 @@ function HomePage(): React.JSX.Element {
 
             <div className="metrics-grid">
               <div className="metric-card">
-                <div className="metric-value">13K</div>
+                <div className="metric-value">14.6K</div>
                 <div className="metric-label">総ダウンロード数</div>
                 <div className="metric-note">App Store</div>
               </div>
@@ -625,89 +635,68 @@ function HomePage(): React.JSX.Element {
             <div className="section-header">
               <h2 className="section-title">About</h2>
               <p className="section-subtitle">
-                ソフトウェアとハードウェアの両面からアプローチし、<br />
-                より包括的なソリューションを提供しています
+                企画から実装・運用まで。<br />
+                日常の不便を、使われ続けるプロダクトへ。
               </p>
             </div>
 
             <div className="about-content">
               <div className="about-column">
-                <h3>開発理念</h3>
-                <p>ユーザーの日常的な課題を解決し、生活をより便利で楽しいものにすることを目指しています。ソフトウェアとハードウェアの両面からアプローチすることで、単なるアプリ開発の枠を超えた、より包括的なソリューションを提供しています。学生生活やエンターテイメント分野でのソリューション提供に注力し、技術の力で社会に価値を提供しています。また、持続可能なビジネスモデルの構築を通じて、長期的にユーザーに価値を提供し続けることを重視しています。</p>
+                <h3>課題を見つけ、使われ続ける形までつくる</h3>
+                <p>学生生活やエンターテインメントの中にある「手間」や「分かりにくさ」を起点に、プロダクトを企画・設計・開発しています。iOSアプリを中心に、WebやIoTも組み合わせながら、課題に対して最も自然な体験をつくることを大切にしています。</p>
+                <p style={{ marginTop: '1rem' }}>リリースはゴールではなく、運用のスタートです。利用状況やフィードバックをもとに改善を重ね、現在は累計14.6Kダウンロードのアプリ群を継続して運営しています。機能をつくるだけでなく、ユーザーに届き、長く価値を出し続けるところまで責任を持ちます。</p>
               </div>
               <div className="about-column">
-                <h3>技術スタック</h3>
+                <h3>主な技術スタック</h3>
 
                 <p>
-                  <strong>■ iOS開発</strong><br />
-                  Swift / SwiftUI を用いたネイティブアプリ開発を中心に行っています。
+                  <strong>■ Mobile</strong><br />
+                  Swift / SwiftUIを中心に、iOSアプリを企画から開発・運用まで手がけています。KotlinによるAndroid開発経験もあります。
                 </p>
 
                 <p style={{ marginTop: '1rem' }}>
-                  MapKit、WidgetKit、WebKitなどのiOS標準フレームワークを活用した実装に加え、
-                  SwiftSoupによるスクレイピング、CoreNFCによるNFC通信、AVKitでの動画再生、
-                  StoreKitによるサブスクリプション課金など、幅広い機能開発に対応可能です。
+                  <strong>■ Web</strong><br />
+                  TypeScript、React、Next.jsを使い、情報を分かりやすく届けるWebアプリケーションを開発しています。
                 </p>
 
                 <p style={{ marginTop: '1rem' }}>
-                  <strong>■ バックエンド / データベース</strong><br />
-                  Firebaseを中心としたサーバーレス構成でバックエンドを構築しています。
+                  <strong>■ Backend / Cloud</strong><br />
+                  Firebaseを中心に、認証・データベース・リアルタイム同期を含むサービス基盤を構築しています。
                 </p>
 
                 <p style={{ marginTop: '1rem' }}>
-                  Firestore / Realtime Databaseによるデータ管理や、
-                  Firebase Authenticationを用いたユーザー認証機能の実装経験があります。
-                </p>
-
-                <p style={{ marginTop: '1rem' }}>
-                  <strong>■ Web開発</strong><br />
-                  React、Next.js、Vite、TypeScript等を用いたフロントエンド開発が可能です。
-                </p>
-
-                <p style={{ marginTop: '1rem' }}>
-                  HTML / CSS / JavaScriptによる基礎的な実装に加え、
-                  外部API連携や、データの加工・整形、検索・フィルタリング機能の実装など、
-                  用途に応じた柔軟な開発に対応しています。
-                </p>
-
-                <p style={{ marginTop: '1rem' }}>
-                  <strong>■ ハードウェア / IoT開発</strong><br />
-                  ArduinoやESP32を用いた組み込み開発の経験があります。
-                </p>
-
-                <p style={{ marginTop: '1rem' }}>
-                  ステッピングモーター制御や加速度センサーによる状態検知、
-                  Firebaseとの連携による通信処理など、クラウドと連動したIoTシステムの構築が可能です。
+                  <strong>■ Hardware / Native</strong><br />
+                  C / C++、Arduino、ESP32を使った、センサーやBLEと連携する機器・ネイティブアプリケーションの開発にも取り組んでいます。
                 </p>
               </div>
             </div>
 
             {/* Business Section */}
             <div className="business-section">
-              <h3>ビジネス面での取り組み</h3>
+              <h3>プロダクトを継続させる仕組み</h3>
               <p className="business-intro">
-                単なるアプリ開発者としてだけでなく、持続可能なサービス運営のためのマネタイズ戦略も実践しています。
+                つくって終わりにせず、ユーザー価値と事業性の両立を考えながら、運用・改善を続けています。
               </p>
 
               <div className="business-grid">
                 <div className="business-card">
-                  <h4>有料サブスクリプション</h4>
-                  <p>RhythMapのPro版として有料サブスクリプション（3ヶ月/6ヶ月/1年プラン）を提供。StoreKitを活用した課金システムを実装し、継続的なサービス運営を実現しています。</p>
+                  <h4>価値に応じた課金設計</h4>
+                  <p>RhythMapではPro版の3ヶ月・6ヶ月・1年プランを提供。StoreKitで課金を実装し、継続利用につながる価値とサービス運営の両立を図っています。</p>
                 </div>
 
                 <div className="business-card">
-                  <h4>広告収益モデル</h4>
-                  <p>Google AdMob、A8.net、楽天アフィリエイトなど、複数の広告配信ツールを活用。無料ユーザーにも価値を提供しながら、適切な収益化を実現しています。</p>
+                  <h4>無料で届けるための収益化</h4>
+                  <p>Google AdMob、A8.net、楽天アフィリエイトを活用。無料ユーザーの体験を損なわない範囲で、サービスを続けるための収益基盤をつくっています。</p>
                 </div>
 
                 <div className="business-card">
-                  <h4>運営コストの管理</h4>
-                  <p>App Store登録料、サーバー維持費、データ集計・チェック作業など、サービス継続のためのコストを適切に管理し、持続可能な運営を実現しています。</p>
+                  <h4>無理なく続ける運用設計</h4>
+                  <p>App Store登録料、サーバー維持費、データ集計・確認作業を把握し、機能の優先順位や運用フローに反映。品質を保ちながら継続できる体制を整えています。</p>
                 </div>
 
                 <div className="business-card">
-                  <h4>ユーザー分析とデータ活用</h4>
-                  <p>Firebase Analyticsを活用したユーザー行動分析により、機能改善やマネタイズ戦略の最適化を継続的に実施。収集されたデータをもとに、プライバシーに配慮しながらサービス改善を進めています。</p>
+                  <h4>データから次の改善へ</h4>
+                  <p>Firebase Analyticsで利用状況を確認し、機能改善や収益化の判断に活用。プライバシーに配慮しながら、仮説検証を継続しています。</p>
                 </div>
               </div>
             </div>
@@ -719,7 +708,7 @@ function HomePage(): React.JSX.Element {
           <div className="container">
             <div className="contact-card">
               <h2>Contact</h2>
-              <p className="lead">ご質問やご相談がございましたら、お気軽にお問い合わせください</p>
+              <p className="lead">アプリ・Webサービス・IoTの企画や開発、既存プロダクトの改善について、お気軽にご相談ください。</p>
 
               <div className="contact-info">
                 <div className="contact-item">
